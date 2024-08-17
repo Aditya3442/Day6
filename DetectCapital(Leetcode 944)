@@ -1,0 +1,20 @@
+class Solution {
+    public static boolean allCapital(String w,int n){
+        for(int i=0;i<n;i++){
+            if(w.charAt(i)>=97 && w.charAt(i)<=122)
+                return false;
+        }
+        return true;
+    }
+    public static boolean small(String w,int n){
+        for(int i=0;i<n;i++){
+            if(w.charAt(i)>=65 && w.charAt(i)<=90)
+                return false;
+        }
+        return true;
+    }
+    public boolean detectCapitalUse(String w) {
+    int n=w.length();
+    return (allCapital(w,n) || small(w.substring(1),n-1));
+    }
+}
